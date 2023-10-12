@@ -1,0 +1,49 @@
+# The shape of your data
+
+When you plot, you only get so many dimensions. 
+
+You really want to use 2-4 (_maybe 5_) dimensions to keep things. So when you are writing an academic paper you are generally the arbiter of "what is important" by selecting these dimensions.
+
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+data(penguins)
+head(penguins)
+```
+
+Two dimensions
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                     color = species)) +
+  geom_point()
+```
+
+But, if we want to share and explore all di
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                     color = species)) +
+  geom_point() +
+  facet_grid(~year)
+```
+
+Maybe you could squeeze one more in there, but at this point you've kind of lost me
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                     color = species, shape = island)) +
+  geom_point() +
+  facet_grid(~year)
+```
+
+
+BOOKMARK: IN GGPLOT, EACH DIMENSION IS ITS OWN COLUMN
+
+So when we communicate data we have this tension between sending simple messages with figures while not simplifying/keeping the complexity of the data. 
+
+This is part of allowing a user/viewer to personalize what they see. "Choose your own adventure" type of approach.

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 The shape of your data | Interactive data with Shiny flexdashboard</title>
+  <meta name="description" content="6 The shape of your data | Interactive data with Shiny flexdashboard" />
+  <meta name="generator" content="bookdown 0.35.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 The shape of your data | Interactive data with Shiny flexdashboard" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="liza-wood/intro-shiny" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 The shape of your data | Interactive data with Shiny flexdashboard" />
+  
+  
+  
+
+<meta name="author" content="Liza Wood" />
+
+
+<meta name="date" content="2023-10-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="themes-and-styling.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="styling.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" style="font-size: 16px">Interactive data with Shiny flexdashboard</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#description"><i class="fa fa-check"></i><b>0.1</b> Description</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#a-note-on-shiny"><i class="fa fa-check"></i><b>0.2</b> A note on Shiny</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html"><i class="fa fa-check"></i><b>1</b> Why interactive sites?</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html#communication-and-personalization"><i class="fa fa-check"></i><b>1.1</b> Communication and personalization</a></li>
+<li class="chapter" data-level="1.2" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html#teaching"><i class="fa fa-check"></i><b>1.2</b> Teaching</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="flexdashboard.html"><a href="flexdashboard.html"><i class="fa fa-check"></i><b>2</b> Flexdashboard</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="flexdashboard.html"><a href="flexdashboard.html#layout"><i class="fa fa-check"></i><b>2.1</b> Layout</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="static-interaction.html"><a href="static-interaction.html"><i class="fa fa-check"></i><b>3</b> Static interaction</a></li>
+<li class="chapter" data-level="4" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html"><i class="fa fa-check"></i><b>4</b> Dynamic interaction</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#user-interface"><i class="fa fa-check"></i><b>4.1</b> User interface</a></li>
+<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#server-output"><i class="fa fa-check"></i><b>4.2</b> Server output</a></li>
+<li class="chapter" data-level="4.3" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#interaction-can-be-more-than-filtering"><i class="fa fa-check"></i><b>4.3</b> Interaction can be more than filtering</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a></li>
+<li class="chapter" data-level="6" data-path="the-shape-of-your-data.html"><a href="the-shape-of-your-data.html"><i class="fa fa-check"></i><b>6</b> The shape of your data</a></li>
+<li class="divider"></li>
+</a>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Interactive data with Shiny flexdashboard</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-shape-of-your-data" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> The shape of your data<a href="the-shape-of-your-data.html#the-shape-of-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When you plot, you only get so many dimensions.</p>
+<p>You really want to use 2-4 (<em>maybe 5</em>) dimensions to keep things. So when you are writing an academic paper you are generally the arbiter of “what is important” by selecting these dimensions.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="the-shape-of-your-data.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="the-shape-of-your-data.html#cb18-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb18-3"><a href="the-shape-of-your-data.html#cb18-3" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+<span id="cb18-4"><a href="the-shape-of-your-data.html#cb18-4" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## 6 Adelie  Torgersen           39.3          20.6               190        3650
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>Two dimensions</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="the-shape-of-your-data.html#cb20-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="the-shape-of-your-data.html#cb20-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="shapeofdata_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="the-shape-of-your-data.html#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb22-2"><a href="the-shape-of-your-data.html#cb22-2" tabindex="-1"></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="the-shape-of-your-data.html#cb22-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="shapeofdata_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>But, if we want to share and explore all di</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="the-shape-of-your-data.html#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb24-2"><a href="the-shape-of-your-data.html#cb24-2" tabindex="-1"></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="the-shape-of-your-data.html#cb24-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-4"><a href="the-shape-of-your-data.html#cb24-4" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>year)</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="shapeofdata_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Maybe you could squeeze one more in there, but at this point you’ve kind of lost me</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="the-shape-of-your-data.html#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb26-2"><a href="the-shape-of-your-data.html#cb26-2" tabindex="-1"></a>                     <span class="at">color =</span> species, <span class="at">shape =</span> island)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="the-shape-of-your-data.html#cb26-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-4"><a href="the-shape-of-your-data.html#cb26-4" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>year)</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="shapeofdata_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>BOOKMARK: IN GGPLOT, EACH DIMENSION IS ITS OWN COLUMN</p>
+<p>So when we communicate data we have this tension between sending simple messages with figures while not simplifying/keeping the complexity of the data.</p>
+<p>This is part of allowing a user/viewer to personalize what they see. “Choose your own adventure” type of approach.</p>
+
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="themes-and-styling.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/liza-wood/intro-shiny/edit/master/shapeofdata.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/liza-wood/intro-shiny/blob/master/shapeofdata.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"code_folding": "show"
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+# Dynamic interaction
+
+Next we make things dynamic, which means we enter the world of Shiny^[Mind the Note in Introduction: We are NOT learning full-blown Shiny.]. The jump here is that we go from being able to hover over and drag around our images, to allowing users to interact with the data. To do that we need two ingredients: 
+
+1. Input / user-interface 
+2. Output / back-end
+
+Generally you will have to iterate between these two sides to get the result you want. Let's start by imagining one way that we want users to be able to interface with the data. For example, we might want them to look at our baseline plot of bill length and bill depth, but also be able to filter the data by several different variables, such as species, island, and year. To do this, we will keep our base plot with only 2 dimensions, but alter the figure based on those three variables. As an end-result, users will be able to make 64 different plots based on all combinations of species, islands, and years. But because the 
+species (4) x islands (4) x years (4)
+
+## Filtering by attributes 
+### Input 
+
+The UI specific the input
+Not all of these are screen-reader friendly
+
+To set up the page, we can specify these options using the various select series of functions.
+
+There are different kinds of selectors...
+
+let's use a basic one
+
+````{verbatim}
+---
+title: 'Palmer Penguin Dashboard'
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+---
+
+```{r, echo = F, warning = F, message = F}
+library(tidyverse)
+library(palmerpenguins)
+library(plotly)
+```
+
+## Column {.sidebar}
+
+```{r}
+selectInput("species", "Species", 
+           choices=c("All", 
+                     unique(as.character(penguins$species))),
+                     selected="All", multiple=F)
+```
+````
+
+What this does under the hood is actually create a data frame called input, which different columns that specify each condition.
+
+so based on what we select, we're creating a data frame like this:
+```{r, echo = F, warning = F}
+penguins <- palmerpenguins::penguins
+```
+
+
+```{r}
+input <- data.frame('species' = c("All", 
+                     unique(as.character(penguins$species))))
+input                     
+```
+
+So we can add this in and see that the new page changes -- we now have a selector. 
+
+That is th euser end. But it doesn't work yet because we need to connect it to the back end.
+
+### Output
+
+The mechanics that makes the graph reactive to what we select as an input
+
+To connect to the output we need 2 steps:
+1. preparing the data
+2. wrapping our plot in the right function
+
+Preparing the data> You are creating a reactive function called selectedData. You could all this whatever you wanted, really. But the idea is you are creating a function that will create a new data frame every tie the selector inputs are changed. 
+
+This is the hardest step because it forces you to think about the conditionality and shape of your data
+
+````{verbatim}
+```{r}
+selectedData <- reactive({
+  if(input$species == "All"){
+    penguins
+  } else {
+    penguins %>% filter(species == input$species)
+  }
+})
+```
+````
+
+Step 2 is easier. We just change two things: 1. we replace our static data with the reactive data function, which we called seleectedData. And then 2. we wrap the whole plot in a function called renderPlot()
+
+````{verbatim}
+```{r}
+renderPlot({
+ ggplot(selectedData(), aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(size = 2, color = "#51127C") +
+  theme_minimal() +
+  labs(x = "Length (mm)", y = "Depth (mm)")
+}) 
+```
+````
+
+Let's try to do this with several of our layers
+
+We add more selectors
+````{verbatim}
+```{r}
+selectInput("species", "Species", 
+           choices=c("All", 
+                     unique(as.character(penguins$species))),
+                     selected="All", multiple=F)
+
+selectInput("island", "Island", 
+           choices=c("All", 
+                     unique(as.character(penguins$island))),
+                     selected="All", multiple=F)
+
+selectInput("year", "Year", 
+           choices=c("All", 
+                     unique(penguins$year)),
+                     selected="All", multiple=F)
+```
+````
+And whenever we add more selectors we have to update our data selection function to react to those selectors
+
+````{verbatim}
+```{r}
+selectedData <- reactive({
+  if(input$species == "All"){
+    penguins_s <- penguins
+  } else {
+    penguins_s <- penguins %>% filter(species == input$species)
+  }
+  if(input$island == "All"){
+    penguins_si <- penguins_s
+  } else {
+    penguins_si <- penguins_s %>% filter(island == input$island)
+  }
+  if(input$year == "All"){
+    penguins_siy <- penguins_si
+  } else {
+    penguins_siy <- penguins_si %>% filter(year == input$year)
+  }
+  return(penguins_siy)
+  })
+```
+````
+Then we don't need to change our plot
+
+## Selecting different columns
+
+Let's say we didn't just want to filter/reduce the data. What if we wanted to color the points of the plot by different things. Here, we don't need to have reactive data selection at all, we just need ggplot to respond to the input by adding and elment (or not)
+
+````{verbatim}
+```{r}
+selectInput("fill_var", "Color points by...", 
+           choices=c("None",
+                     "species",
+                     "island",
+                      "year"),
+                     selected="None", multiple=F)
+
+```
+````
+
+Now, we only are focusing on one input, input$fill_var. This input value is going to specify if we want to color by anything, and if so, which column. So instead of making the data selection conditional on our input, we can make the plot conditional on the input: 
+````{verbatim}
+```{r} 
+renderPlot({
+  if(input$fill_var == "None"){
+    # Make the same plot as before
+     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+      geom_point(size = 2, color = "#51127CF") +
+      theme_minimal() +
+      labs(x = "Length (mm)", y = "Depth (mm)")
+  } else {
+    # Add in the input
+     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, 
+                          color = input$fill_var)) +
+      geom_point() +
+      theme_minimal() +
+      labs(x = "Length (mm)", y = "Depth (mm)")
+  }
+
+}) 
+
+```
+````
+
+BUT, when we try this we get a frustrating result. It is evaluating input$fill_var as text, not as a column name in the data frame. How do we get around this? We have to be very specific with R, telling it to evaluation the text as an object. We don't get too much into this, but we will do it using these two functions:
+
+```
+eval(parse(text = input$fill_var))
+```
+
+So when we add that in, we get what we want:
+
+````{verbatim}
+```{r} 
+renderPlot({
+  if(input$fill_var == "None"){
+    # Make the same plot as before
+     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+      geom_point() +
+      theme_minimal() +
+      labs(x = "Length (mm)", y = "Depth (mm)")
+  } else {
+    # Add in the input, make sure to evaluate the parsed text so that R
+    # thinks of it as a variable and not just text
+     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, 
+                          color = eval(parse(text = input$fill_var)))) +
+      geom_point() +
+      theme_minimal() +
+      labs(x = "Length (mm)", y = "Depth (mm)", color = "")
+  }
+}) 
+
+```
+````
+
