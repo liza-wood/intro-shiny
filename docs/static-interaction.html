@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -160,11 +162,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="static-interaction.html"><a href="static-interaction.html"><i class="fa fa-check"></i><b>3</b> Static interaction</a></li>
 <li class="chapter" data-level="4" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html"><i class="fa fa-check"></i><b>4</b> Dynamic interaction</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#user-interface"><i class="fa fa-check"></i><b>4.1</b> User interface</a></li>
-<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#server-output"><i class="fa fa-check"></i><b>4.2</b> Server output</a></li>
-<li class="chapter" data-level="4.3" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#interaction-can-be-more-than-filtering"><i class="fa fa-check"></i><b>4.3</b> Interaction can be more than filtering</a></li>
+<li class="chapter" data-level="4.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#filtering-by-attributes"><i class="fa fa-check"></i><b>4.1</b> Filtering by attributes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#input"><i class="fa fa-check"></i><b>4.1.1</b> Input</a></li>
+<li class="chapter" data-level="4.1.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#output"><i class="fa fa-check"></i><b>4.1.2</b> Output</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a></li>
+<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#selecting-different-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting different columns</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="themes-and-styling.html"><a href="themes-and-styling.html#built-in-themes"><i class="fa fa-check"></i><b>5.1</b> Built-in themes</a></li>
+<li class="chapter" data-level="5.2" data-path="themes-and-styling.html"><a href="themes-and-styling.html#custom-css"><i class="fa fa-check"></i><b>5.2</b> Custom CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="divider"></li>
 </a>
 
@@ -187,13 +197,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="static-interaction" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Static interaction<a href="static-interaction.html#static-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>So far, our dashboard doesn’t have any interactive content – we only have shapes and some text. What we want to do next is add in a figure so that we can work words interactivity. Our first focus will be on plots that can be interacted with using wrapper functions like <code>plotly</code> and <code>3D</code>, but aren’t actually dynamic – meaning they don’t respond to the user yet.</p>
+<p>So far, our dashboard doesn’t have any interactive content – we only have shapes and some text. What we want to do next is add in a figure so that we can work words interactivity. Our first focus will be on plots that can be interacted with using wrapper functions like <code>plotly</code> and <code>networkD3</code>, but aren’t actually dynamic – meaning they don’t respond to the user yet.</p>
 <p>For instance, you might want to just show off some graphs and let folks have a peek at the underlying data, but not actually change the shape or variables represented in the data. Here are some examples:</p>
 <ul>
 <li><a href="https://testing-apps.shinyapps.io/flexdashboard-dygraphs/" class="uri">https://testing-apps.shinyapps.io/flexdashboard-dygraphs/</a></li>
 <li><a href="https://testing-apps.shinyapps.io/flexdashboard-highcharter/" class="uri">https://testing-apps.shinyapps.io/flexdashboard-highcharter/</a></li>
 </ul>
-<p>We do this by adding in code chunks to our Rmd. Feel free to paste in all of this code to your Rmd document again, or paste only the new code chunk.</p>
+<p>Note that there are loads of example, all of which share source code (!), available through <code>[flexdashboard</code> examples](<a href="https://rstudio.github.io/flexdashboard/articles/examples.html" class="uri">https://rstudio.github.io/flexdashboard/articles/examples.html</a>).</p>
+<p>To add in figures we can insert code chunks to our Rmd. As in other Rmd formatting, we can also insert a setup chunk where we load in our packages. Feel free to paste in all of this code to your Rmd document again, or paste only the new code chunk.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="static-interaction.html#cb3-1" tabindex="-1"></a>---</span>
 <span id="cb3-2"><a href="static-interaction.html#cb3-2" tabindex="-1"></a>title: &#39;Palmer Penguin Dashboard&#39;</span>
 <span id="cb3-3"><a href="static-interaction.html#cb3-3" tabindex="-1"></a>output:</span>
@@ -218,14 +229,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-22"><a href="static-interaction.html#cb3-22" tabindex="-1"></a>  theme_minimal() +</span>
 <span id="cb3-23"><a href="static-interaction.html#cb3-23" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;) </span>
 <span id="cb3-24"><a href="static-interaction.html#cb3-24" tabindex="-1"></a>```</span></code></pre></div>
-<p>So now we have a plot embedded in our dashboard. But we can’t do anything with it yet. The first entry point to making this interactive to use wrapper functions. For instance, you may have played with the <a href="https://github.com/plotly/plotly.R"><code>plotly</code> package</a> before. We can wrap the function <code>ggplotly</code> around our ggplot to convert the static ggplot to an intractive one, where we can explore the values behind each data point.</p>
+<p>So now we have a plot embedded in our dashboard. Cool! But we can’t do anything with it yet – it is totally static. The first entry point to making this interactive is to use wrapper functions. For instance, you may have played with the <a href="https://github.com/plotly/plotly.R"><code>plotly</code> package</a> before. We can wrap the function <code>ggplotly</code> around our ggplot to convert the static ggplot to an intractive one, where we can explore the values behind each data point.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="static-interaction.html#cb4-1" tabindex="-1"></a>```{r}</span>
 <span id="cb4-2"><a href="static-interaction.html#cb4-2" tabindex="-1"></a>ggplotly(ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
 <span id="cb4-3"><a href="static-interaction.html#cb4-3" tabindex="-1"></a>  geom_point(size = 2, color = &quot;#51127C&quot;) +</span>
 <span id="cb4-4"><a href="static-interaction.html#cb4-4" tabindex="-1"></a>  theme_minimal() +</span>
 <span id="cb4-5"><a href="static-interaction.html#cb4-5" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;))</span>
 <span id="cb4-6"><a href="static-interaction.html#cb4-6" tabindex="-1"></a>```</span></code></pre></div>
-<p>Further, <code>plotly</code> has lots of capacities, so just a teaser is that we can play around with the <code>tooltip</code> argument in <code>ggplotly</code> to adjust what users see.</p>
+<p>Further, <code>plotly</code> has lots of capacities, and just one example is that we can play around with the <code>tooltip</code> argument in <code>ggplotly</code> to adjust what users see.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a href="static-interaction.html#cb5-1" tabindex="-1"></a>```{r}</span>
 <span id="cb5-2"><a href="static-interaction.html#cb5-2" tabindex="-1"></a>ggplotly(ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
 <span id="cb5-3"><a href="static-interaction.html#cb5-3" tabindex="-1"></a>  geom_point(size = 2, color = &quot;#51127C&quot;) +</span>
@@ -233,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-5"><a href="static-interaction.html#cb5-5" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;),</span>
 <span id="cb5-6"><a href="static-interaction.html#cb5-6" tabindex="-1"></a>  tooltip = c(&quot;x&quot;))</span>
 <span id="cb5-7"><a href="static-interaction.html#cb5-7" tabindex="-1"></a>```</span></code></pre></div>
-<p>There are other interactive packages like <code>plotly</code>, namely <code>leaflet</code> for maps and <code>networkD3</code> for networks.</p>
+<p>There are other interactive packages like <code>plotly</code>, namely <code>leaflet</code> for maps and <code>networkD3</code> for networks. You don’t necessarily need to follow along here, but for example, we can manipulate the penguins data a little to make a network figure that we can aslo drag and drop around (though admittedly it is a lame network).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a href="static-interaction.html#cb6-1" tabindex="-1"></a>### Penguins by island</span>
 <span id="cb6-2"><a href="static-interaction.html#cb6-2" tabindex="-1"></a>```{r}</span>
 <span id="cb6-3"><a href="static-interaction.html#cb6-3" tabindex="-1"></a>penguins %&gt;% </span>
@@ -250,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-14"><a href="static-interaction.html#cb6-14" tabindex="-1"></a>        zoom = T    </span>
 <span id="cb6-15"><a href="static-interaction.html#cb6-15" tabindex="-1"></a>        )</span>
 <span id="cb6-16"><a href="static-interaction.html#cb6-16" tabindex="-1"></a>```</span></code></pre></div>
-<p>Now, what we’ve done so far is cool – using just flexdashboard and something like <code>plotly</code> or you can build this out and make pretty cool semi-static pages.</p>
+<p>Now, what we’ve done so far is cool – using just flexdashboard and something like <code>plotly</code>, you can build this out and make pretty nice semi-static pages.</p>
+<p>For example, below I show a screenshot of a dashboard, aftering playing around with the ‘row’ formatting of <code>flexdashboard</code>, adding in some text and images and figures.</p>
 <p><img src="img/static.png" width="100%" /></p>
 <details>
 <summary>
@@ -312,7 +324,7 @@ Reveal source code
 <span id="cb7-54"><a href="static-interaction.html#cb7-54" tabindex="-1"></a>```</span></code></pre></div>
 </details>
 <p><br></p>
-<p>But, we haven’t really gotten into the dynamic user-interfacing with data that is makes this more useful. And because of this, note that we haven’t even gotten into the world of Shiny yet! So, that’s what’s next…</p>
+<p>But, we haven’t really gotten into the dynamic user-interface, which is the main focus of the lesson. (And because of this, note that we haven’t even gotten into the world of Shiny yet!) So, that’s what’s next…</p>
 
 </div>
             </section>

@@ -40,6 +40,8 @@ This lesson is meant to be a _cursory_ look at creating interactive dashboards u
 
 Shiny can be coded in R in (what I understand) are two main ways. One that relies on the coder's ability to design the architecture through scripting in R and X, where you create the user interface, the server, a web app that links them. A second option relies on the flexdashboard package, which makes dashboard creation through RMarkdown much easier on several fronts, including Shiny. This lesson is going to focus on the latter. 
 
+If you want to learn more serious Shiny, start here: https://shiny.posit.co/ 
+
 ## Set up
 
 ### Package installation 
@@ -51,6 +53,8 @@ install.packages('tidyverse')
 install.packages('palmerpenguins')
 install.packages('plotly')
 install.packages('flexdashboard')
+# worry less about...
+install.packages('networkD3')
 ```
 
 

@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -160,11 +162,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="static-interaction.html"><a href="static-interaction.html"><i class="fa fa-check"></i><b>3</b> Static interaction</a></li>
 <li class="chapter" data-level="4" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html"><i class="fa fa-check"></i><b>4</b> Dynamic interaction</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#user-interface"><i class="fa fa-check"></i><b>4.1</b> User interface</a></li>
-<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#server-output"><i class="fa fa-check"></i><b>4.2</b> Server output</a></li>
-<li class="chapter" data-level="4.3" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#interaction-can-be-more-than-filtering"><i class="fa fa-check"></i><b>4.3</b> Interaction can be more than filtering</a></li>
+<li class="chapter" data-level="4.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#filtering-by-attributes"><i class="fa fa-check"></i><b>4.1</b> Filtering by attributes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#input"><i class="fa fa-check"></i><b>4.1.1</b> Input</a></li>
+<li class="chapter" data-level="4.1.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#output"><i class="fa fa-check"></i><b>4.1.2</b> Output</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a></li>
+<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#selecting-different-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting different columns</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="themes-and-styling.html"><a href="themes-and-styling.html#built-in-themes"><i class="fa fa-check"></i><b>5.1</b> Built-in themes</a></li>
+<li class="chapter" data-level="5.2" data-path="themes-and-styling.html"><a href="themes-and-styling.html#custom-css"><i class="fa fa-check"></i><b>5.2</b> Custom CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="divider"></li>
 </a>
 
@@ -192,21 +202,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Input / user-interface</li>
 <li>Output / back-end</li>
 </ol>
-<p>Generally you will ahve to iterate between these two sides to get the result you want. I usually like to start by close your eyes and imagine: What do I want users to manipulate?</p>
-<p>Year
-Species
-Island</p>
-<p>Here, we’re going to keep only 2 base dimensions, but alter the figure based on: species, island, and year</p>
-<p>So in total, users will be able to make 64 different plots based on all combinations of species, islands, and years. But because the
+<p>Generally you will have to iterate between these two sides to get the result you want. Let’s start by imagining one way that we want users to be able to interface with the data. For example, we might want them to look at our baseline plot of bill length and bill depth, but also be able to filter the data by several different variables, such as species, island, and year. To do this, we will keep our base plot with only 2 dimensions, but alter the figure based on those three variables. As an end-result, users will be able to make 64 different plots based on all combinations of species, islands, and years. But because the
 species (4) x islands (4) x years (4)</p>
-<div id="user-interface" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> User interface<a href="dynamic-interaction.html#user-interface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="filtering-by-attributes" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Filtering by attributes<a href="dynamic-interaction.html#filtering-by-attributes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="input" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Input<a href="dynamic-interaction.html#input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The UI specific the input
 Not all of these are screen-reader friendly</p>
-<p>To set up the page, we can specify these options using the various select series of functions.
-<!-- see this post for making code chunks verbatim: https://yihui.org/en/2017/11/knitr-verbatim-code-chunk/
---></p>
+<p>To set up the page, we can specify these options using the various select series of functions.</p>
 <p>There are different kinds of selectors…</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-1">Table 4.1: </span>Input options from <a href="https://rstudio.github.io/flexdashboard/articles/shiny.html">flexdashboard</a>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Input function
+</th>
+<th style="text-align:left;">
+Input type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+selectInput
+</td>
+<td style="text-align:left;">
+A box with choices to select from
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sliderInput
+</td>
+<td style="text-align:left;">
+A slider bar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+radioButtons
+</td>
+<td style="text-align:left;">
+A set of radio buttons
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+textInput
+</td>
+<td style="text-align:left;">
+A field to enter text
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numericInput
+</td>
+<td style="text-align:left;">
+A field to enter numbers
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+checkboxInput
+</td>
+<td style="text-align:left;">
+A single check box
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dateInput
+</td>
+<td style="text-align:left;">
+A calendar to aid date selection
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dateRangeInput
+</td>
+<td style="text-align:left;">
+A pair of calendars for selecting a date range
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fileInput
+</td>
+<td style="text-align:left;">
+A file upload control wizard
+</td>
+</tr>
+</tbody>
+</table>
 <p>let’s use a basic one</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a href="dynamic-interaction.html#cb8-1" tabindex="-1"></a>---</span>
 <span id="cb8-2"><a href="dynamic-interaction.html#cb8-2" tabindex="-1"></a>title: &#39;Palmer Penguin Dashboard&#39;</span>
@@ -242,8 +336,8 @@ Not all of these are screen-reader friendly</p>
 <p>So we can add this in and see that the new page changes – we now have a selector.</p>
 <p>That is th euser end. But it doesn’t work yet because we need to connect it to the back end.</p>
 </div>
-<div id="server-output" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Server output<a href="dynamic-interaction.html#server-output" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="output" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Output<a href="dynamic-interaction.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The mechanics that makes the graph reactive to what we select as an input</p>
 <p>To connect to the output we need 2 steps:
 1. preparing the data
@@ -268,7 +362,7 @@ Not all of these are screen-reader friendly</p>
 <span id="cb12-6"><a href="dynamic-interaction.html#cb12-6" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
 <span id="cb12-7"><a href="dynamic-interaction.html#cb12-7" tabindex="-1"></a>}) </span>
 <span id="cb12-8"><a href="dynamic-interaction.html#cb12-8" tabindex="-1"></a>```</span></code></pre></div>
-<p>Let’s try to do this with several of our laters</p>
+<p>Let’s try to do this with several of our layers</p>
 <p>We add more selectors</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb13-1"><a href="dynamic-interaction.html#cb13-1" tabindex="-1"></a>```{r}</span>
 <span id="cb13-2"><a href="dynamic-interaction.html#cb13-2" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
@@ -309,8 +403,9 @@ Not all of these are screen-reader friendly</p>
 <span id="cb14-20"><a href="dynamic-interaction.html#cb14-20" tabindex="-1"></a>```</span></code></pre></div>
 <p>Then we don’t need to change our plot</p>
 </div>
-<div id="interaction-can-be-more-than-filtering" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Interaction can be more than filtering<a href="dynamic-interaction.html#interaction-can-be-more-than-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="selecting-different-columns" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Selecting different columns<a href="dynamic-interaction.html#selecting-different-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s say we didn’t just want to filter/reduce the data. What if we wanted to color the points of the plot by different things. Here, we don’t need to have reactive data selection at all, we just need ggplot to respond to the input by adding and elment (or not)</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb15-1"><a href="dynamic-interaction.html#cb15-1" tabindex="-1"></a>```{r}</span>
 <span id="cb15-2"><a href="dynamic-interaction.html#cb15-2" tabindex="-1"></a>selectInput(&quot;fill_var&quot;, &quot;Color points by...&quot;, </span>
@@ -365,7 +460,6 @@ Not all of these are screen-reader friendly</p>
 <span id="cb18-18"><a href="dynamic-interaction.html#cb18-18" tabindex="-1"></a>}) </span>
 <span id="cb18-19"><a href="dynamic-interaction.html#cb18-19" tabindex="-1"></a></span>
 <span id="cb18-20"><a href="dynamic-interaction.html#cb18-20" tabindex="-1"></a>```</span></code></pre></div>
-<p>BOOKMARK: IN GGPLOT, EACH DIMENSION IS ITS OWN COLUMN</p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 # Dynamic interaction
 
-Next we make things dynamic, which means we enter the world of Shiny^[Mind the Note in Introduction: We are NOT learning full-blown Shiny.]. The jump here is that we go from being able to hover over and drag around our images, to allowing users to interact with the data. To do that we need two ingredients: 
+Next we make things dynamic, which means we enter the world of Shiny^[Mind the Note in Introduction: We are NOT learning full-blown Shiny.]. There is a nice [overview of how flexdashboard interacts with Shiny](https://rstudio.github.io/flexdashboard/articles/shiny.html). The jump here is that we go from being able to hover over and drag around our images, to allowing users to interact with the data. To do that we need two ingredients: 
 
 1. Input / user-interface 
 2. Output / back-end
@@ -17,6 +17,17 @@ Not all of these are screen-reader friendly
 To set up the page, we can specify these options using the various select series of functions.
 
 There are different kinds of selectors...
+
+```{r, echo = F, message = F, warning = F}
+library(dplyr)
+selector_function <- c("selectInput","sliderInput","radioButtons","textInput","numericInput","checkboxInput","dateInput","dateRangeInput","fileInput")
+input_type <- c("A box with choices to select from","A slider bar","A set of radio buttons","A field to enter text","A field to enter numbers","A single check box","A calendar to aid date selection","A pair of calendars for selecting a date range","A file upload control wizard")
+sdf <- data.frame(selector_function, input_type)
+kableExtra::kbl(sdf, booktabs = T, caption = "Input options from [flexdashboard](https://rstudio.github.io/flexdashboard/articles/shiny.html)",
+                col.names = c("Input function", "Input type")) %>%
+  kableExtra::kable_styling()
+```
+
 
 let's use a basic one
 

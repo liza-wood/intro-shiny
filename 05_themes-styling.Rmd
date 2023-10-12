@@ -1,2 +1,8 @@
 # Themes and styling 
 
+## Built-in themes 
+
+## Custom CSS
+
+here is already a much more impressive penguins layout
+https://rstudio.github.io/flexdashboard/articles/theme.html

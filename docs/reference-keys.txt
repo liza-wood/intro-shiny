@@ -1,3 +1,4 @@
+tab:unnamed-chunk-1
 set-up
 package-installation
 shinyapps.io-account
@@ -8,7 +9,11 @@ flexdashboard
 layout
 static-interaction
 dynamic-interaction
-user-interface
-server-output
-interaction-can-be-more-than-filtering
+filtering-by-attributes
+input
+output
+selecting-different-columns
 themes-and-styling
+built-in-themes
+custom-css
+publishing
