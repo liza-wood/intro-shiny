@@ -72,5 +72,5 @@ Once on this pane, you'll click **Connect** > **shinyapps.io** and follow the in
 knitr::include_graphics(c('img/shinypath.png','img/instructions.png'))
 ```
 
-### Review conditionals  
+### Review conditionals {-} 
 This is not essential, but one of the trickiest parts of making documents interactive is setting the right conditionals for re-shaping your data. I would recommend revisiting the logic behind **conditional statements** in R, which include `if...else`, `ifelse()`, and `case_when()` functions. This tutorial will use the `if...else` syntax, so maybe worth [brushing up on](https://www.guru99.com/r-if-else-elif-statement.html).
