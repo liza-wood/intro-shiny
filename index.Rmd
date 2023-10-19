@@ -29,22 +29,18 @@ output:
 
 This lesson is meant to be a _cursory_ look at creating interactive dashboards using RMarkdown + `flexdashboard` with Shiny integration. Roughly we will...
 
-1. Introduce and discuss interactive sites (5 minutes)
-2. Overview of `flexdashboard` and its layout scheme (10)
-3. Create a dashboard with static interaction (does not rely on Shiny) (10)
-4. Create a dashboard with dynamic interaction (does rely on Shiny) (30)
-5. Themes and styles (5)
-6. Publishing (10)
+1. Introduce and discuss interactive sites  
+2. Overview of `flexdashboard` and its layout scheme  
+3. Create a dashboard with static interaction (does not rely on Shiny)  
+4. Create a dashboard with dynamic interaction (does rely on Shiny)  
+5. Discuss options for themes and styles 
+6. Publish the site 
 
-**A note on Shiny:** The focus of this lesson is integrating elements of Shiny through the RMarkdown interface, which is _different_ than learning Shiny outright. is among the more popular ways of creating interactive sites because it provides a server on which you can host for free (up to a limit). So it is a popular starting point, though ...
+**A note on Shiny:** The focus of this lesson is integrating elements of Shiny through the RMarkdown interface via `flexdashboard`, which is _different_ than learning classic Shiny via the `shiny` package. More standard tutorials for learning Shiny, such as [Posit's introduction](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html), can show you how to build an app without `flexdashboard`. Personally, I think learning Shiny via `flexdashboard` is a good gateway, as it introduces some (but not all) of the concepts needed for more advanced app-building.
 
-Shiny can be coded in R in (what I understand) are two main ways. One that relies on the coder's ability to design the architecture through scripting in R and X, where you create the user interface, the server, a web app that links them. A second option relies on the flexdashboard package, which makes dashboard creation through RMarkdown much easier on several fronts, including Shiny. This lesson is going to focus on the latter. 
+## Set up {-}
 
-If you want to learn more serious Shiny, start here: https://shiny.posit.co/ 
-
-## Set up
-
-### Package installation 
+### Package installation {-}
 
 It will be useful to make sure the following packages are installed, especially if your computer is sometimes buggy downloading packages.
 
@@ -53,12 +49,13 @@ install.packages('tidyverse')
 install.packages('palmerpenguins')
 install.packages('plotly')
 install.packages('flexdashboard')
+install.packages('shiny')
 # worry less about...
 install.packages('networkD3')
 ```
 
 
-### shinyapps.io account 
+### Make a shinyapps.io account {-}
 
 If you want to actually publish the page we make in this lesson, you will need to create a Shiny account and link it to your RStudio. To do this, please complete the following steps: 
 
@@ -74,3 +71,6 @@ Once on this pane, you'll click **Connect** > **shinyapps.io** and follow the in
 ```{r, echo = F, fig.show="hold", out.width=c("48%", "48%")}
 knitr::include_graphics(c('img/shinypath.png','img/instructions.png'))
 ```
+
+### Review conditionals  
+This is not essential, but one of the trickiest parts of making documents interactive is setting the right conditionals for re-shaping your data. I would recommend revisiting the logic behind **conditional statements** in R, which include `if...else`, `ifelse()`, and `case_when()` functions. This tutorial will use the `if...else` syntax, so maybe worth [brushing up on](https://www.guru99.com/r-if-else-elif-statement.html).

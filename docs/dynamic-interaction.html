@@ -23,7 +23,7 @@
 <meta name="author" content="Liza Wood" />
 
 
-<meta name="date" content="2023-10-12" />
+<meta name="date" content="2023-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,10 +144,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i><b>0.1</b> Set up</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i>Set up</a>
 <ul>
-<li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#package-installation"><i class="fa fa-check"></i><b>0.1.1</b> Package installation</a></li>
-<li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#shinyapps.io-account"><i class="fa fa-check"></i><b>0.1.2</b> shinyapps.io account</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#package-installation"><i class="fa fa-check"></i>Package installation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#make-a-shinyapps.io-account"><i class="fa fa-check"></i>Make a shinyapps.io account</a></li>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#review-conditionals"><i class="fa fa-check"></i><b>0.0.1</b> Review conditionals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html"><i class="fa fa-check"></i><b>1</b> Why interactive sites?</a>
@@ -155,10 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html#communication-and-personalization"><i class="fa fa-check"></i><b>1.1</b> Communication and personalization</a></li>
 <li class="chapter" data-level="1.2" data-path="why-interactive-sites.html"><a href="why-interactive-sites.html#teaching"><i class="fa fa-check"></i><b>1.2</b> Teaching</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="flexdashboard.html"><a href="flexdashboard.html"><i class="fa fa-check"></i><b>2</b> Flexdashboard</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="flexdashboard.html"><a href="flexdashboard.html#layout"><i class="fa fa-check"></i><b>2.1</b> Layout</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="flexdashboard.html"><a href="flexdashboard.html"><i class="fa fa-check"></i><b>2</b> Flexdashboard</a></li>
 <li class="chapter" data-level="3" data-path="static-interaction.html"><a href="static-interaction.html"><i class="fa fa-check"></i><b>3</b> Static interaction</a></li>
 <li class="chapter" data-level="4" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html"><i class="fa fa-check"></i><b>4</b> Dynamic interaction</a>
 <ul>
@@ -166,13 +164,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#input"><i class="fa fa-check"></i><b>4.1.1</b> Input</a></li>
 <li class="chapter" data-level="4.1.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#output"><i class="fa fa-check"></i><b>4.1.2</b> Output</a></li>
+<li class="chapter" data-level="4.1.3" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#runtime-shiny"><i class="fa fa-check"></i><b>4.1.3</b> runtime: shiny</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#selecting-different-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting different columns</a></li>
+<li class="chapter" data-level="4.2" data-path="dynamic-interaction.html"><a href="dynamic-interaction.html#selecting-by-different-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting by different columns</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="themes-and-styling.html"><a href="themes-and-styling.html"><i class="fa fa-check"></i><b>5</b> Themes and styling</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="themes-and-styling.html"><a href="themes-and-styling.html#built-in-themes"><i class="fa fa-check"></i><b>5.1</b> Built-in themes</a></li>
-<li class="chapter" data-level="5.2" data-path="themes-and-styling.html"><a href="themes-and-styling.html#custom-css"><i class="fa fa-check"></i><b>5.2</b> Custom CSS</a></li>
+<li class="chapter" data-level="5.2" data-path="themes-and-styling.html"><a href="themes-and-styling.html#custom-themes"><i class="fa fa-check"></i><b>5.2</b> Custom themes</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="divider"></li>
@@ -197,21 +196,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="dynamic-interaction" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Dynamic interaction<a href="dynamic-interaction.html#dynamic-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Next we make things dynamic, which means we enter the world of Shiny<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. The jump here is that we go from being able to hover over and drag around our images, to allowing users to interact with the data. To do that we need two ingredients:</p>
+<p>Next we make things dynamic, which means we enter the world of Shiny<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. There is a nice <a href="https://rstudio.github.io/flexdashboard/articles/shiny.html">overview of how flexdashboard interacts with Shiny</a>. The jump here is that we go from being able to hover over and drag around our images, to allowing users to interact with the data. To do that we need three ingredients:</p>
 <ol style="list-style-type: decimal">
 <li>Input / user-interface</li>
-<li>Output / back-end</li>
+<li>Output / back-end<br />
+</li>
+<li>runtime: shiny in the YAML</li>
 </ol>
-<p>Generally you will have to iterate between these two sides to get the result you want. Let’s start by imagining one way that we want users to be able to interface with the data. For example, we might want them to look at our baseline plot of bill length and bill depth, but also be able to filter the data by several different variables, such as species, island, and year. To do this, we will keep our base plot with only 2 dimensions, but alter the figure based on those three variables. As an end-result, users will be able to make 64 different plots based on all combinations of species, islands, and years. But because the
-species (4) x islands (4) x years (4)</p>
+<p>Generally you will have to iterate between creating the input and output to get the result you want. A good place to start is usually by imagining one way that you want users to be able to interface with the data. This can take lots of forms. You may want to filter the data based on different attributes, lets users decide different grouping or variables, or alter color schemes.</p>
 <div id="filtering-by-attributes" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Filtering by attributes<a href="dynamic-interaction.html#filtering-by-attributes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we are going to focus on interactivity that let’s users filter the data, meaning, reduce it to the variables that they are interested in. For this example, we’ll focus on just the baseline plot we’re working with – the relationship between bill length and bill depth – but focus on filtering the data by several different variables, such as species, island, and year. So we’ll keep our base plot with only 2 dimensions, but alter the figure based on those three variables. As an end-result, users will be able to make 64 different plots based on all combinations of species, islands, and years.</p>
 <div id="input" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Input<a href="dynamic-interaction.html#input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The UI specific the input
-Not all of these are screen-reader friendly</p>
-<p>To set up the page, we can specify these options using the various select series of functions.</p>
-<p>There are different kinds of selectors…</p>
+<p>The input focuses on the user-interface (UI) side – what the user toggles in order to change their view. There are different kinds of inputs that can give you drop-down menus, sliders, text box entries, etc. <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:unnamed-chunk-1">Table 4.1: </span>Input options from <a href="https://rstudio.github.io/flexdashboard/articles/shiny.html">flexdashboard</a>
@@ -301,151 +299,190 @@ A file upload control wizard
 </tr>
 </tbody>
 </table>
-<p>let’s use a basic one</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a href="dynamic-interaction.html#cb8-1" tabindex="-1"></a>---</span>
-<span id="cb8-2"><a href="dynamic-interaction.html#cb8-2" tabindex="-1"></a>title: &#39;Palmer Penguin Dashboard&#39;</span>
-<span id="cb8-3"><a href="dynamic-interaction.html#cb8-3" tabindex="-1"></a>runtime: shiny</span>
-<span id="cb8-4"><a href="dynamic-interaction.html#cb8-4" tabindex="-1"></a>output:</span>
-<span id="cb8-5"><a href="dynamic-interaction.html#cb8-5" tabindex="-1"></a>  flexdashboard::flex_dashboard:</span>
-<span id="cb8-6"><a href="dynamic-interaction.html#cb8-6" tabindex="-1"></a>---</span>
-<span id="cb8-7"><a href="dynamic-interaction.html#cb8-7" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="dynamic-interaction.html#cb8-8" tabindex="-1"></a>```{r, echo = F, warning = F, message = F}</span>
-<span id="cb8-9"><a href="dynamic-interaction.html#cb8-9" tabindex="-1"></a>library(tidyverse)</span>
-<span id="cb8-10"><a href="dynamic-interaction.html#cb8-10" tabindex="-1"></a>library(palmerpenguins)</span>
-<span id="cb8-11"><a href="dynamic-interaction.html#cb8-11" tabindex="-1"></a>library(plotly)</span>
-<span id="cb8-12"><a href="dynamic-interaction.html#cb8-12" tabindex="-1"></a>```</span>
-<span id="cb8-13"><a href="dynamic-interaction.html#cb8-13" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="dynamic-interaction.html#cb8-14" tabindex="-1"></a>## Column {.sidebar}</span>
-<span id="cb8-15"><a href="dynamic-interaction.html#cb8-15" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="dynamic-interaction.html#cb8-16" tabindex="-1"></a>```{r}</span>
-<span id="cb8-17"><a href="dynamic-interaction.html#cb8-17" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
-<span id="cb8-18"><a href="dynamic-interaction.html#cb8-18" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
-<span id="cb8-19"><a href="dynamic-interaction.html#cb8-19" tabindex="-1"></a>                     unique(as.character(penguins$species))),</span>
-<span id="cb8-20"><a href="dynamic-interaction.html#cb8-20" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
-<span id="cb8-21"><a href="dynamic-interaction.html#cb8-21" tabindex="-1"></a>```</span></code></pre></div>
-<p>What this does under the hood is actually create a data frame called input, which different columns that specify each condition.</p>
-<p>so based on what we select, we’re creating a data frame like this:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="dynamic-interaction.html#cb9-1" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&#39;species&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;All&quot;</span>, </span>
-<span id="cb9-2"><a href="dynamic-interaction.html#cb9-2" tabindex="-1"></a>                     <span class="fu">unique</span>(<span class="fu">as.character</span>(penguins<span class="sc">$</span>species))))</span>
-<span id="cb9-3"><a href="dynamic-interaction.html#cb9-3" tabindex="-1"></a>input                     </span></code></pre></div>
+<p>So these are functions that we can put into an R chunk, and then fill out the arguments accordingly. You can look at the arguments like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="dynamic-interaction.html#cb8-1" tabindex="-1"></a>?shiny<span class="sc">::</span>selectInput</span></code></pre></div>
+<p>Generally, the arguments are the <code>inputID</code>, or the name that will be assigned to a column in a new data frame called input. Then the <code>label</code>, which is what users will see next to the input, <code>choices</code>, which is what users will see with their input selection, and <code>selected</code> can be set to have a default value selected from your list of <code>choices</code>. There are others, but we’ll stick with these for now.</p>
+<p>So we will add this code chunk into our sidebar column, and first make an input selector for the species of penguins. We provide the choices of “All”, or the unique names of all the penguins in the data frame, and select “All” as the default. Note that we also need to load in the <code>shiny</code> library because the input functions are from Shiny.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="dynamic-interaction.html#cb9-1" tabindex="-1"></a>---</span>
+<span id="cb9-2"><a href="dynamic-interaction.html#cb9-2" tabindex="-1"></a>title: &#39;Palmer Penguin Dashboard&#39;</span>
+<span id="cb9-3"><a href="dynamic-interaction.html#cb9-3" tabindex="-1"></a>output:</span>
+<span id="cb9-4"><a href="dynamic-interaction.html#cb9-4" tabindex="-1"></a>  flexdashboard::flex_dashboard:</span>
+<span id="cb9-5"><a href="dynamic-interaction.html#cb9-5" tabindex="-1"></a>---</span>
+<span id="cb9-6"><a href="dynamic-interaction.html#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="dynamic-interaction.html#cb9-7" tabindex="-1"></a>```{r, echo = F, warning = F, message = F}</span>
+<span id="cb9-8"><a href="dynamic-interaction.html#cb9-8" tabindex="-1"></a>library(tidyverse)</span>
+<span id="cb9-9"><a href="dynamic-interaction.html#cb9-9" tabindex="-1"></a>library(palmerpenguins)</span>
+<span id="cb9-10"><a href="dynamic-interaction.html#cb9-10" tabindex="-1"></a>library(plotly)</span>
+<span id="cb9-11"><a href="dynamic-interaction.html#cb9-11" tabindex="-1"></a>library(shiny)</span>
+<span id="cb9-12"><a href="dynamic-interaction.html#cb9-12" tabindex="-1"></a>```</span>
+<span id="cb9-13"><a href="dynamic-interaction.html#cb9-13" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="dynamic-interaction.html#cb9-14" tabindex="-1"></a>## Column {.sidebar}</span>
+<span id="cb9-15"><a href="dynamic-interaction.html#cb9-15" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="dynamic-interaction.html#cb9-16" tabindex="-1"></a>```{r}</span>
+<span id="cb9-17"><a href="dynamic-interaction.html#cb9-17" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
+<span id="cb9-18"><a href="dynamic-interaction.html#cb9-18" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
+<span id="cb9-19"><a href="dynamic-interaction.html#cb9-19" tabindex="-1"></a>                     unique(as.character(penguins$species))),</span>
+<span id="cb9-20"><a href="dynamic-interaction.html#cb9-20" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
+<span id="cb9-21"><a href="dynamic-interaction.html#cb9-21" tabindex="-1"></a>```</span>
+<span id="cb9-22"><a href="dynamic-interaction.html#cb9-22" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="dynamic-interaction.html#cb9-23" tabindex="-1"></a>## Column</span>
+<span id="cb9-24"><a href="dynamic-interaction.html#cb9-24" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="dynamic-interaction.html#cb9-25" tabindex="-1"></a>### Relationship between penguin bill length and depth</span>
+<span id="cb9-26"><a href="dynamic-interaction.html#cb9-26" tabindex="-1"></a>  </span>
+<span id="cb9-27"><a href="dynamic-interaction.html#cb9-27" tabindex="-1"></a>```{r}</span>
+<span id="cb9-28"><a href="dynamic-interaction.html#cb9-28" tabindex="-1"></a>ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
+<span id="cb9-29"><a href="dynamic-interaction.html#cb9-29" tabindex="-1"></a>  geom_point(size = 3, color = &quot;#51127C&quot;) +</span>
+<span id="cb9-30"><a href="dynamic-interaction.html#cb9-30" tabindex="-1"></a>  theme_minimal() +</span>
+<span id="cb9-31"><a href="dynamic-interaction.html#cb9-31" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;) </span>
+<span id="cb9-32"><a href="dynamic-interaction.html#cb9-32" tabindex="-1"></a>```</span></code></pre></div>
+<p>If we add in the <code>selectInput</code> function and <strong>Knit</strong>, we can see that we now have a selector on the sidebar. As a user, you can switch it around. BUT it doesn’t work yet because we need to connect it to the back end.</p>
+</div>
+<div id="output" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Output<a href="dynamic-interaction.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To connect to the output figure to the input, we need to do 2 things:<br />
+1. Prepare the data
+2. Wrap our plot in the right <code>render</code> function</p>
+<p>Preparing the data is probably the way of thinking that is most important to creating interactive data. The idea is to <strong>create a reactive function</strong> that filters the data reactive to the input.</p>
+<p>So a first note is about what actually happens when we use the input functions. These functions create a data frame called input (under the hood), with a column for each input selected, named after the <code>inputID</code>. Essentially, in our example already we’ve created this:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="dynamic-interaction.html#cb10-1" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&#39;species&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;All&quot;</span>, </span>
+<span id="cb10-2"><a href="dynamic-interaction.html#cb10-2" tabindex="-1"></a>                     <span class="fu">unique</span>(<span class="fu">as.character</span>(penguins<span class="sc">$</span>species))))</span>
+<span id="cb10-3"><a href="dynamic-interaction.html#cb10-3" tabindex="-1"></a>input                     </span></code></pre></div>
 <pre><code>##     species
 ## 1       All
 ## 2    Adelie
 ## 3    Gentoo
 ## 4 Chinstrap</code></pre>
-<p>So we can add this in and see that the new page changes – we now have a selector.</p>
-<p>That is th euser end. But it doesn’t work yet because we need to connect it to the back end.</p>
-</div>
-<div id="output" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Output<a href="dynamic-interaction.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The mechanics that makes the graph reactive to what we select as an input</p>
-<p>To connect to the output we need 2 steps:
-1. preparing the data
-2. wrapping our plot in the right function</p>
-<p>Preparing the data&gt; You are creating a reactive function called selectedData. You could all this whatever you wanted, really. But the idea is you are creating a function that will create a new data frame every tie the selector inputs are changed.</p>
-<p>This is the hardest step because it forces you to think about the conditionality and shape of your data</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="dynamic-interaction.html#cb11-1" tabindex="-1"></a>```{r}</span>
-<span id="cb11-2"><a href="dynamic-interaction.html#cb11-2" tabindex="-1"></a>selectedData &lt;- reactive({</span>
-<span id="cb11-3"><a href="dynamic-interaction.html#cb11-3" tabindex="-1"></a>  if(input$species == &quot;All&quot;){</span>
-<span id="cb11-4"><a href="dynamic-interaction.html#cb11-4" tabindex="-1"></a>    penguins</span>
-<span id="cb11-5"><a href="dynamic-interaction.html#cb11-5" tabindex="-1"></a>  } else {</span>
-<span id="cb11-6"><a href="dynamic-interaction.html#cb11-6" tabindex="-1"></a>    penguins %&gt;% filter(species == input$species)</span>
-<span id="cb11-7"><a href="dynamic-interaction.html#cb11-7" tabindex="-1"></a>  }</span>
-<span id="cb11-8"><a href="dynamic-interaction.html#cb11-8" tabindex="-1"></a>})</span>
-<span id="cb11-9"><a href="dynamic-interaction.html#cb11-9" tabindex="-1"></a>```</span></code></pre></div>
-<p>Step 2 is easier. We just change two things: 1. we replace our static data with the reactive data function, which we called seleectedData. And then 2. we wrap the whole plot in a function called renderPlot()</p>
+<p>With that in mind, we need to use that input data frame to identify our “filtered data”. We can call this whatever we want, but I think based on how we’re setting up this page, we can call it “filtered data.”</p>
+<p>Anyway, the idea is that you are writing a function that will create a new data frame every time the selector inputs are changed. That new data frame will represent the conditions set by your inputs. This is the hardest step because it forces you to think about the conditionality and shape of your data.</p>
+<p>In our example, we will call our function <code>filteredData</code> (though we could call this anything), and we will create it using the <code>reactive</code> function. Inside this reactive function, using curly brackets, we will define the conditions based on which we filter our data. You can use any conditional you want: <code>if...else</code>, <code>ifelse()</code>, <code>case_when()</code>. Here I use <code>if...else</code> because I think it is easier to read.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb12-1"><a href="dynamic-interaction.html#cb12-1" tabindex="-1"></a>```{r}</span>
-<span id="cb12-2"><a href="dynamic-interaction.html#cb12-2" tabindex="-1"></a>renderPlot({</span>
-<span id="cb12-3"><a href="dynamic-interaction.html#cb12-3" tabindex="-1"></a> ggplot(selectedData(), aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
-<span id="cb12-4"><a href="dynamic-interaction.html#cb12-4" tabindex="-1"></a>  geom_point(size = 2, color = &quot;#51127C&quot;) +</span>
-<span id="cb12-5"><a href="dynamic-interaction.html#cb12-5" tabindex="-1"></a>  theme_minimal() +</span>
-<span id="cb12-6"><a href="dynamic-interaction.html#cb12-6" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
-<span id="cb12-7"><a href="dynamic-interaction.html#cb12-7" tabindex="-1"></a>}) </span>
-<span id="cb12-8"><a href="dynamic-interaction.html#cb12-8" tabindex="-1"></a>```</span></code></pre></div>
-<p>Let’s try to do this with several of our layers</p>
-<p>We add more selectors</p>
+<span id="cb12-2"><a href="dynamic-interaction.html#cb12-2" tabindex="-1"></a>filteredData &lt;- reactive({</span>
+<span id="cb12-3"><a href="dynamic-interaction.html#cb12-3" tabindex="-1"></a>  if(input$species == &quot;All&quot;){</span>
+<span id="cb12-4"><a href="dynamic-interaction.html#cb12-4" tabindex="-1"></a>    penguins</span>
+<span id="cb12-5"><a href="dynamic-interaction.html#cb12-5" tabindex="-1"></a>  } else {</span>
+<span id="cb12-6"><a href="dynamic-interaction.html#cb12-6" tabindex="-1"></a>    penguins %&gt;% filter(species == input$species)</span>
+<span id="cb12-7"><a href="dynamic-interaction.html#cb12-7" tabindex="-1"></a>  }</span>
+<span id="cb12-8"><a href="dynamic-interaction.html#cb12-8" tabindex="-1"></a>})</span>
+<span id="cb12-9"><a href="dynamic-interaction.html#cb12-9" tabindex="-1"></a>```</span></code></pre></div>
+<p>So now we have this reactive function called <code>filteredData()</code>.</p>
+<p>The second part of this, wrapping our figure in the correct function, is easier. We just change two things: 1. We need to replace our static data with the reactive data function, which we called <code>filteredData</code>. And then 2. We need to wrap the whole plot in a function called <code>renderPlot()</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb13-1"><a href="dynamic-interaction.html#cb13-1" tabindex="-1"></a>```{r}</span>
-<span id="cb13-2"><a href="dynamic-interaction.html#cb13-2" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
-<span id="cb13-3"><a href="dynamic-interaction.html#cb13-3" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
-<span id="cb13-4"><a href="dynamic-interaction.html#cb13-4" tabindex="-1"></a>                     unique(as.character(penguins$species))),</span>
-<span id="cb13-5"><a href="dynamic-interaction.html#cb13-5" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
-<span id="cb13-6"><a href="dynamic-interaction.html#cb13-6" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="dynamic-interaction.html#cb13-7" tabindex="-1"></a>selectInput(&quot;island&quot;, &quot;Island&quot;, </span>
-<span id="cb13-8"><a href="dynamic-interaction.html#cb13-8" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
-<span id="cb13-9"><a href="dynamic-interaction.html#cb13-9" tabindex="-1"></a>                     unique(as.character(penguins$island))),</span>
-<span id="cb13-10"><a href="dynamic-interaction.html#cb13-10" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
-<span id="cb13-11"><a href="dynamic-interaction.html#cb13-11" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="dynamic-interaction.html#cb13-12" tabindex="-1"></a>selectInput(&quot;year&quot;, &quot;Year&quot;, </span>
-<span id="cb13-13"><a href="dynamic-interaction.html#cb13-13" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
-<span id="cb13-14"><a href="dynamic-interaction.html#cb13-14" tabindex="-1"></a>                     unique(penguins$year)),</span>
-<span id="cb13-15"><a href="dynamic-interaction.html#cb13-15" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
-<span id="cb13-16"><a href="dynamic-interaction.html#cb13-16" tabindex="-1"></a>```</span></code></pre></div>
-<p>And whenever we add more selectors we have to update our data selection function to react to those selectors</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb14-1"><a href="dynamic-interaction.html#cb14-1" tabindex="-1"></a>```{r}</span>
-<span id="cb14-2"><a href="dynamic-interaction.html#cb14-2" tabindex="-1"></a>selectedData &lt;- reactive({</span>
-<span id="cb14-3"><a href="dynamic-interaction.html#cb14-3" tabindex="-1"></a>  if(input$species == &quot;All&quot;){</span>
-<span id="cb14-4"><a href="dynamic-interaction.html#cb14-4" tabindex="-1"></a>    penguins_s &lt;- penguins</span>
-<span id="cb14-5"><a href="dynamic-interaction.html#cb14-5" tabindex="-1"></a>  } else {</span>
-<span id="cb14-6"><a href="dynamic-interaction.html#cb14-6" tabindex="-1"></a>    penguins_s &lt;- penguins %&gt;% filter(species == input$species)</span>
-<span id="cb14-7"><a href="dynamic-interaction.html#cb14-7" tabindex="-1"></a>  }</span>
-<span id="cb14-8"><a href="dynamic-interaction.html#cb14-8" tabindex="-1"></a>  if(input$island == &quot;All&quot;){</span>
-<span id="cb14-9"><a href="dynamic-interaction.html#cb14-9" tabindex="-1"></a>    penguins_si &lt;- penguins_s</span>
-<span id="cb14-10"><a href="dynamic-interaction.html#cb14-10" tabindex="-1"></a>  } else {</span>
-<span id="cb14-11"><a href="dynamic-interaction.html#cb14-11" tabindex="-1"></a>    penguins_si &lt;- penguins_s %&gt;% filter(island == input$island)</span>
-<span id="cb14-12"><a href="dynamic-interaction.html#cb14-12" tabindex="-1"></a>  }</span>
-<span id="cb14-13"><a href="dynamic-interaction.html#cb14-13" tabindex="-1"></a>  if(input$year == &quot;All&quot;){</span>
-<span id="cb14-14"><a href="dynamic-interaction.html#cb14-14" tabindex="-1"></a>    penguins_siy &lt;- penguins_si</span>
-<span id="cb14-15"><a href="dynamic-interaction.html#cb14-15" tabindex="-1"></a>  } else {</span>
-<span id="cb14-16"><a href="dynamic-interaction.html#cb14-16" tabindex="-1"></a>    penguins_siy &lt;- penguins_si %&gt;% filter(year == input$year)</span>
-<span id="cb14-17"><a href="dynamic-interaction.html#cb14-17" tabindex="-1"></a>  }</span>
-<span id="cb14-18"><a href="dynamic-interaction.html#cb14-18" tabindex="-1"></a>  return(penguins_siy)</span>
-<span id="cb14-19"><a href="dynamic-interaction.html#cb14-19" tabindex="-1"></a>  })</span>
-<span id="cb14-20"><a href="dynamic-interaction.html#cb14-20" tabindex="-1"></a>```</span></code></pre></div>
-<p>Then we don’t need to change our plot</p>
+<span id="cb13-2"><a href="dynamic-interaction.html#cb13-2" tabindex="-1"></a>renderPlot({</span>
+<span id="cb13-3"><a href="dynamic-interaction.html#cb13-3" tabindex="-1"></a> ggplot(filteredData(), aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
+<span id="cb13-4"><a href="dynamic-interaction.html#cb13-4" tabindex="-1"></a>  geom_point(size = 3, color = &quot;#51127C&quot;) +</span>
+<span id="cb13-5"><a href="dynamic-interaction.html#cb13-5" tabindex="-1"></a>  theme_minimal() +</span>
+<span id="cb13-6"><a href="dynamic-interaction.html#cb13-6" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
+<span id="cb13-7"><a href="dynamic-interaction.html#cb13-7" tabindex="-1"></a>}) </span>
+<span id="cb13-8"><a href="dynamic-interaction.html#cb13-8" tabindex="-1"></a>```</span></code></pre></div>
 </div>
-</div>
-<div id="selecting-different-columns" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Selecting different columns<a href="dynamic-interaction.html#selecting-different-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let’s say we didn’t just want to filter/reduce the data. What if we wanted to color the points of the plot by different things. Here, we don’t need to have reactive data selection at all, we just need ggplot to respond to the input by adding and elment (or not)</p>
+<div id="runtime-shiny" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> runtime: shiny<a href="dynamic-interaction.html#runtime-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The third and final ingredient to turn your dashboard into something that is dynamically interactive is to integrate Shiny. We do this by adding one line to our YAML and making sure we load the <code>shiny</code> package into R.</p>
+<p>In the end, your Rmd file should look like this:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb14-1"><a href="dynamic-interaction.html#cb14-1" tabindex="-1"></a>---</span>
+<span id="cb14-2"><a href="dynamic-interaction.html#cb14-2" tabindex="-1"></a>title: &#39;Palmer Penguin Dashboard&#39;</span>
+<span id="cb14-3"><a href="dynamic-interaction.html#cb14-3" tabindex="-1"></a>runtime: shiny</span>
+<span id="cb14-4"><a href="dynamic-interaction.html#cb14-4" tabindex="-1"></a>output:</span>
+<span id="cb14-5"><a href="dynamic-interaction.html#cb14-5" tabindex="-1"></a>  flexdashboard::flex_dashboard:</span>
+<span id="cb14-6"><a href="dynamic-interaction.html#cb14-6" tabindex="-1"></a>---</span>
+<span id="cb14-7"><a href="dynamic-interaction.html#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="dynamic-interaction.html#cb14-8" tabindex="-1"></a>```{r, echo = F, warning = F, message = F}</span>
+<span id="cb14-9"><a href="dynamic-interaction.html#cb14-9" tabindex="-1"></a>library(tidyverse)</span>
+<span id="cb14-10"><a href="dynamic-interaction.html#cb14-10" tabindex="-1"></a>library(palmerpenguins)</span>
+<span id="cb14-11"><a href="dynamic-interaction.html#cb14-11" tabindex="-1"></a>library(plotly)</span>
+<span id="cb14-12"><a href="dynamic-interaction.html#cb14-12" tabindex="-1"></a>library(shiny)</span>
+<span id="cb14-13"><a href="dynamic-interaction.html#cb14-13" tabindex="-1"></a>```</span>
+<span id="cb14-14"><a href="dynamic-interaction.html#cb14-14" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="dynamic-interaction.html#cb14-15" tabindex="-1"></a>## Column {.sidebar}</span>
+<span id="cb14-16"><a href="dynamic-interaction.html#cb14-16" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="dynamic-interaction.html#cb14-17" tabindex="-1"></a>```{r}</span>
+<span id="cb14-18"><a href="dynamic-interaction.html#cb14-18" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
+<span id="cb14-19"><a href="dynamic-interaction.html#cb14-19" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
+<span id="cb14-20"><a href="dynamic-interaction.html#cb14-20" tabindex="-1"></a>                     unique(as.character(penguins$species))),</span>
+<span id="cb14-21"><a href="dynamic-interaction.html#cb14-21" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
+<span id="cb14-22"><a href="dynamic-interaction.html#cb14-22" tabindex="-1"></a>```</span>
+<span id="cb14-23"><a href="dynamic-interaction.html#cb14-23" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="dynamic-interaction.html#cb14-24" tabindex="-1"></a>```{r}</span>
+<span id="cb14-25"><a href="dynamic-interaction.html#cb14-25" tabindex="-1"></a>filteredData &lt;- reactive({</span>
+<span id="cb14-26"><a href="dynamic-interaction.html#cb14-26" tabindex="-1"></a>  if(input$species == &quot;All&quot;){</span>
+<span id="cb14-27"><a href="dynamic-interaction.html#cb14-27" tabindex="-1"></a>    penguins</span>
+<span id="cb14-28"><a href="dynamic-interaction.html#cb14-28" tabindex="-1"></a>  } else {</span>
+<span id="cb14-29"><a href="dynamic-interaction.html#cb14-29" tabindex="-1"></a>    penguins %&gt;% filter(species == input$species)</span>
+<span id="cb14-30"><a href="dynamic-interaction.html#cb14-30" tabindex="-1"></a>  }</span>
+<span id="cb14-31"><a href="dynamic-interaction.html#cb14-31" tabindex="-1"></a>})</span>
+<span id="cb14-32"><a href="dynamic-interaction.html#cb14-32" tabindex="-1"></a>```</span>
+<span id="cb14-33"><a href="dynamic-interaction.html#cb14-33" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="dynamic-interaction.html#cb14-34" tabindex="-1"></a>## Column</span>
+<span id="cb14-35"><a href="dynamic-interaction.html#cb14-35" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="dynamic-interaction.html#cb14-36" tabindex="-1"></a>### Relationship between penguin bill length and depth</span>
+<span id="cb14-37"><a href="dynamic-interaction.html#cb14-37" tabindex="-1"></a>  </span>
+<span id="cb14-38"><a href="dynamic-interaction.html#cb14-38" tabindex="-1"></a>```{r}</span>
+<span id="cb14-39"><a href="dynamic-interaction.html#cb14-39" tabindex="-1"></a>renderPlot({</span>
+<span id="cb14-40"><a href="dynamic-interaction.html#cb14-40" tabindex="-1"></a> ggplot(filteredData(), aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
+<span id="cb14-41"><a href="dynamic-interaction.html#cb14-41" tabindex="-1"></a>  geom_point(size = 3, color = &quot;#51127C&quot;) +</span>
+<span id="cb14-42"><a href="dynamic-interaction.html#cb14-42" tabindex="-1"></a>  theme_minimal() +</span>
+<span id="cb14-43"><a href="dynamic-interaction.html#cb14-43" tabindex="-1"></a>  labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
+<span id="cb14-44"><a href="dynamic-interaction.html#cb14-44" tabindex="-1"></a>}) </span>
+<span id="cb14-45"><a href="dynamic-interaction.html#cb14-45" tabindex="-1"></a>```</span></code></pre></div>
+<p>If you make this final change and click save, you’ll notice that the <strong>Knit</strong> button disappears and is replaced with a <code>Run document</code> button. This is your Rmd becoming <em>shinier</em>. If you click run, take a look. You should now have a reactive page!</p>
+<p>Now, to make sure we understand the logic of aligning inputs and outputs, let’s try adding a few more variables to the mix. We initially wanted users to be able to make one of 64 plots, based on species, island, and year. So let’s add those other two selectors, and we can use different types just to mix it up.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb15-1"><a href="dynamic-interaction.html#cb15-1" tabindex="-1"></a>```{r}</span>
-<span id="cb15-2"><a href="dynamic-interaction.html#cb15-2" tabindex="-1"></a>selectInput(&quot;fill_var&quot;, &quot;Color points by...&quot;, </span>
-<span id="cb15-3"><a href="dynamic-interaction.html#cb15-3" tabindex="-1"></a>           choices=c(&quot;None&quot;,</span>
-<span id="cb15-4"><a href="dynamic-interaction.html#cb15-4" tabindex="-1"></a>                     &quot;species&quot;,</span>
-<span id="cb15-5"><a href="dynamic-interaction.html#cb15-5" tabindex="-1"></a>                     &quot;island&quot;,</span>
-<span id="cb15-6"><a href="dynamic-interaction.html#cb15-6" tabindex="-1"></a>                      &quot;year&quot;),</span>
-<span id="cb15-7"><a href="dynamic-interaction.html#cb15-7" tabindex="-1"></a>                     selected=&quot;None&quot;, multiple=F)</span>
-<span id="cb15-8"><a href="dynamic-interaction.html#cb15-8" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="dynamic-interaction.html#cb15-9" tabindex="-1"></a>```</span></code></pre></div>
-<p>Now, we only are focusing on one input, input$fill_var. This input value is going to specify if we want to color by anything, and if so, which column. So instead of making the data selection conditional on our input, we can make the plot conditional on the input:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb16-1"><a href="dynamic-interaction.html#cb16-1" tabindex="-1"></a>```{r} </span>
-<span id="cb16-2"><a href="dynamic-interaction.html#cb16-2" tabindex="-1"></a>renderPlot({</span>
-<span id="cb16-3"><a href="dynamic-interaction.html#cb16-3" tabindex="-1"></a>  if(input$fill_var == &quot;None&quot;){</span>
-<span id="cb16-4"><a href="dynamic-interaction.html#cb16-4" tabindex="-1"></a>    # Make the same plot as before</span>
-<span id="cb16-5"><a href="dynamic-interaction.html#cb16-5" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
-<span id="cb16-6"><a href="dynamic-interaction.html#cb16-6" tabindex="-1"></a>      geom_point(size = 2, color = &quot;#51127CF&quot;) +</span>
-<span id="cb16-7"><a href="dynamic-interaction.html#cb16-7" tabindex="-1"></a>      theme_minimal() +</span>
-<span id="cb16-8"><a href="dynamic-interaction.html#cb16-8" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
-<span id="cb16-9"><a href="dynamic-interaction.html#cb16-9" tabindex="-1"></a>  } else {</span>
-<span id="cb16-10"><a href="dynamic-interaction.html#cb16-10" tabindex="-1"></a>    # Add in the input</span>
-<span id="cb16-11"><a href="dynamic-interaction.html#cb16-11" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, </span>
-<span id="cb16-12"><a href="dynamic-interaction.html#cb16-12" tabindex="-1"></a>                          color = input$fill_var)) +</span>
-<span id="cb16-13"><a href="dynamic-interaction.html#cb16-13" tabindex="-1"></a>      geom_point() +</span>
-<span id="cb16-14"><a href="dynamic-interaction.html#cb16-14" tabindex="-1"></a>      theme_minimal() +</span>
-<span id="cb16-15"><a href="dynamic-interaction.html#cb16-15" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
-<span id="cb16-16"><a href="dynamic-interaction.html#cb16-16" tabindex="-1"></a>  }</span>
-<span id="cb16-17"><a href="dynamic-interaction.html#cb16-17" tabindex="-1"></a></span>
-<span id="cb16-18"><a href="dynamic-interaction.html#cb16-18" tabindex="-1"></a>}) </span>
-<span id="cb16-19"><a href="dynamic-interaction.html#cb16-19" tabindex="-1"></a></span>
-<span id="cb16-20"><a href="dynamic-interaction.html#cb16-20" tabindex="-1"></a>```</span></code></pre></div>
-<p>BUT, when we try this we get a frustrating result. It is evaluating input$fill_var as text, not as a column name in the data frame. How do we get around this? We have to be very specific with R, telling it to evaluation the text as an object. We don’t get too much into this, but we will do it using these two functions:</p>
-<pre><code>eval(parse(text = input$fill_var))</code></pre>
-<p>So when we add that in, we get what we want:</p>
+<span id="cb15-2"><a href="dynamic-interaction.html#cb15-2" tabindex="-1"></a>selectInput(&quot;species&quot;, &quot;Species&quot;, </span>
+<span id="cb15-3"><a href="dynamic-interaction.html#cb15-3" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
+<span id="cb15-4"><a href="dynamic-interaction.html#cb15-4" tabindex="-1"></a>                     unique(as.character(penguins$species))),</span>
+<span id="cb15-5"><a href="dynamic-interaction.html#cb15-5" tabindex="-1"></a>                     selected=&quot;All&quot;, multiple=F)</span>
+<span id="cb15-6"><a href="dynamic-interaction.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="dynamic-interaction.html#cb15-7" tabindex="-1"></a>radioButtons(&quot;island&quot;, &quot;Island&quot;, </span>
+<span id="cb15-8"><a href="dynamic-interaction.html#cb15-8" tabindex="-1"></a>           choices=c(&quot;All&quot;, </span>
+<span id="cb15-9"><a href="dynamic-interaction.html#cb15-9" tabindex="-1"></a>                     unique(as.character(penguins$island))),</span>
+<span id="cb15-10"><a href="dynamic-interaction.html#cb15-10" tabindex="-1"></a>                     selected=&quot;All&quot;)</span>
+<span id="cb15-11"><a href="dynamic-interaction.html#cb15-11" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="dynamic-interaction.html#cb15-12" tabindex="-1"></a>sliderInput(&quot;year&quot;, &quot;Year&quot;, </span>
+<span id="cb15-13"><a href="dynamic-interaction.html#cb15-13" tabindex="-1"></a>           min = min(penguins$year),</span>
+<span id="cb15-14"><a href="dynamic-interaction.html#cb15-14" tabindex="-1"></a>           max = max(penguins$year),</span>
+<span id="cb15-15"><a href="dynamic-interaction.html#cb15-15" tabindex="-1"></a>           value = median(penguins$year), </span>
+<span id="cb15-16"><a href="dynamic-interaction.html#cb15-16" tabindex="-1"></a>           step = 1)</span>
+<span id="cb15-17"><a href="dynamic-interaction.html#cb15-17" tabindex="-1"></a>```</span></code></pre></div>
+<p>Now, whenever we add more inputs, we have to update our data filtering function to react to them. Now that we have several inputs we need several conditions. I like to create intermediate versions of the filtered data, which I signify by appening the letter of the input in each condition.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb16-1"><a href="dynamic-interaction.html#cb16-1" tabindex="-1"></a>```{r}</span>
+<span id="cb16-2"><a href="dynamic-interaction.html#cb16-2" tabindex="-1"></a>filteredData &lt;- reactive({</span>
+<span id="cb16-3"><a href="dynamic-interaction.html#cb16-3" tabindex="-1"></a>  if(input$species == &quot;All&quot;){</span>
+<span id="cb16-4"><a href="dynamic-interaction.html#cb16-4" tabindex="-1"></a>    penguins_s &lt;- penguins</span>
+<span id="cb16-5"><a href="dynamic-interaction.html#cb16-5" tabindex="-1"></a>  } else {</span>
+<span id="cb16-6"><a href="dynamic-interaction.html#cb16-6" tabindex="-1"></a>    penguins_s &lt;- penguins %&gt;% filter(species == input$species)</span>
+<span id="cb16-7"><a href="dynamic-interaction.html#cb16-7" tabindex="-1"></a>  }</span>
+<span id="cb16-8"><a href="dynamic-interaction.html#cb16-8" tabindex="-1"></a>  if(input$island == &quot;All&quot;){</span>
+<span id="cb16-9"><a href="dynamic-interaction.html#cb16-9" tabindex="-1"></a>    penguins_si &lt;- penguins_s</span>
+<span id="cb16-10"><a href="dynamic-interaction.html#cb16-10" tabindex="-1"></a>  } else {</span>
+<span id="cb16-11"><a href="dynamic-interaction.html#cb16-11" tabindex="-1"></a>    penguins_si &lt;- penguins_s %&gt;% filter(island == input$island)</span>
+<span id="cb16-12"><a href="dynamic-interaction.html#cb16-12" tabindex="-1"></a>  }</span>
+<span id="cb16-13"><a href="dynamic-interaction.html#cb16-13" tabindex="-1"></a>  penguins_siy &lt;- filter(penguins_si, year == input$year)</span>
+<span id="cb16-14"><a href="dynamic-interaction.html#cb16-14" tabindex="-1"></a>  return(penguins_siy)</span>
+<span id="cb16-15"><a href="dynamic-interaction.html#cb16-15" tabindex="-1"></a>  })</span>
+<span id="cb16-16"><a href="dynamic-interaction.html#cb16-16" tabindex="-1"></a>```</span></code></pre></div>
+<p>Now because all of this is changing the data that feeds into the figure, but not any parameters of the figure itself, we don’t need to change the output portion. Everything that get’s added is in the input/UI side and the backend of filtering the data.</p>
+</div>
+</div>
+<div id="selecting-by-different-columns" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Selecting by different columns<a href="dynamic-interaction.html#selecting-by-different-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, let’s think of another user scenario. Let’s say we didn’t want to filter/reduce the data, but instead, we wanted to color the points of the plot by different variables. In this scenario, we don’t need to change the shape of the data at all, just make one of the arguments in the figure creation reactive to the inputs.</p>
+<p>So, let’s think about this first on the input side. Let’s create a drop down of variables that we want to color the nodes by.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb17-1"><a href="dynamic-interaction.html#cb17-1" tabindex="-1"></a>```{r}</span>
+<span id="cb17-2"><a href="dynamic-interaction.html#cb17-2" tabindex="-1"></a>selectInput(&quot;fill_var&quot;, &quot;Color points by...&quot;, </span>
+<span id="cb17-3"><a href="dynamic-interaction.html#cb17-3" tabindex="-1"></a>           choices=c(&quot;None&quot;,</span>
+<span id="cb17-4"><a href="dynamic-interaction.html#cb17-4" tabindex="-1"></a>                     &quot;species&quot;,</span>
+<span id="cb17-5"><a href="dynamic-interaction.html#cb17-5" tabindex="-1"></a>                     &quot;island&quot;,</span>
+<span id="cb17-6"><a href="dynamic-interaction.html#cb17-6" tabindex="-1"></a>                      &quot;year&quot;),</span>
+<span id="cb17-7"><a href="dynamic-interaction.html#cb17-7" tabindex="-1"></a>                     selected=&quot;None&quot;, multiple=F)</span>
+<span id="cb17-8"><a href="dynamic-interaction.html#cb17-8" tabindex="-1"></a>```</span></code></pre></div>
+<p>Now, think about what our under-the-food input data from looks like. It will only have one column: input$fill_var. This input value is going to specify if we want to color by a given variable, and if so, which column. So instead of making the <em>data filtering</em> conditional on our input, we can make the <em>plot</em> conditional on the input.</p>
+<p>Here we can specify, if the fill variable input is selected to “None”, just make the plot with no fill. But otherwise, inser input$fill_var as the fill.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb18-1"><a href="dynamic-interaction.html#cb18-1" tabindex="-1"></a>```{r} </span>
 <span id="cb18-2"><a href="dynamic-interaction.html#cb18-2" tabindex="-1"></a>renderPlot({</span>
 <span id="cb18-3"><a href="dynamic-interaction.html#cb18-3" tabindex="-1"></a>  if(input$fill_var == &quot;None&quot;){</span>
 <span id="cb18-4"><a href="dynamic-interaction.html#cb18-4" tabindex="-1"></a>    # Make the same plot as before</span>
 <span id="cb18-5"><a href="dynamic-interaction.html#cb18-5" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
-<span id="cb18-6"><a href="dynamic-interaction.html#cb18-6" tabindex="-1"></a>      geom_point() +</span>
+<span id="cb18-6"><a href="dynamic-interaction.html#cb18-6" tabindex="-1"></a>      geom_point(size = 3) +</span>
 <span id="cb18-7"><a href="dynamic-interaction.html#cb18-7" tabindex="-1"></a>      theme_minimal() +</span>
 <span id="cb18-8"><a href="dynamic-interaction.html#cb18-8" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
 <span id="cb18-9"><a href="dynamic-interaction.html#cb18-9" tabindex="-1"></a>  } else {</span>
@@ -453,13 +490,38 @@ A file upload control wizard
 <span id="cb18-11"><a href="dynamic-interaction.html#cb18-11" tabindex="-1"></a>    # thinks of it as a variable and not just text</span>
 <span id="cb18-12"><a href="dynamic-interaction.html#cb18-12" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, </span>
 <span id="cb18-13"><a href="dynamic-interaction.html#cb18-13" tabindex="-1"></a>                          color = eval(parse(text = input$fill_var)))) +</span>
-<span id="cb18-14"><a href="dynamic-interaction.html#cb18-14" tabindex="-1"></a>      geom_point() +</span>
+<span id="cb18-14"><a href="dynamic-interaction.html#cb18-14" tabindex="-1"></a>      geom_point(size = 3) +</span>
 <span id="cb18-15"><a href="dynamic-interaction.html#cb18-15" tabindex="-1"></a>      theme_minimal() +</span>
-<span id="cb18-16"><a href="dynamic-interaction.html#cb18-16" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;, color = &quot;&quot;)</span>
-<span id="cb18-17"><a href="dynamic-interaction.html#cb18-17" tabindex="-1"></a>  }</span>
-<span id="cb18-18"><a href="dynamic-interaction.html#cb18-18" tabindex="-1"></a>}) </span>
-<span id="cb18-19"><a href="dynamic-interaction.html#cb18-19" tabindex="-1"></a></span>
-<span id="cb18-20"><a href="dynamic-interaction.html#cb18-20" tabindex="-1"></a>```</span></code></pre></div>
+<span id="cb18-16"><a href="dynamic-interaction.html#cb18-16" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;, color = &quot;&quot;)  +</span>
+<span id="cb18-17"><a href="dynamic-interaction.html#cb18-17" tabindex="-1"></a>      scale_color_viridis_d(end = .8)</span>
+<span id="cb18-18"><a href="dynamic-interaction.html#cb18-18" tabindex="-1"></a>  }</span>
+<span id="cb18-19"><a href="dynamic-interaction.html#cb18-19" tabindex="-1"></a>}) </span>
+<span id="cb18-20"><a href="dynamic-interaction.html#cb18-20" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="dynamic-interaction.html#cb18-21" tabindex="-1"></a>```</span></code></pre></div>
+<p>BUT, when we try this we get a frustrating result. It is evaluating input$fill_var as text, not as a column name in the data frame. How do we get around this? We have to be very specific with R, telling it to evaluate the text as an object. We don’t get too much into this, but we will do it using these two functions:</p>
+<pre><code>eval(parse(text = input$fill_var))</code></pre>
+<p>So when we add that in, we get what we want:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb20-1"><a href="dynamic-interaction.html#cb20-1" tabindex="-1"></a>```{r} </span>
+<span id="cb20-2"><a href="dynamic-interaction.html#cb20-2" tabindex="-1"></a>renderPlot({</span>
+<span id="cb20-3"><a href="dynamic-interaction.html#cb20-3" tabindex="-1"></a>  if(input$fill_var == &quot;None&quot;){</span>
+<span id="cb20-4"><a href="dynamic-interaction.html#cb20-4" tabindex="-1"></a>    # Make the same plot as before</span>
+<span id="cb20-5"><a href="dynamic-interaction.html#cb20-5" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +</span>
+<span id="cb20-6"><a href="dynamic-interaction.html#cb20-6" tabindex="-1"></a>      geom_point() +</span>
+<span id="cb20-7"><a href="dynamic-interaction.html#cb20-7" tabindex="-1"></a>      theme_minimal() +</span>
+<span id="cb20-8"><a href="dynamic-interaction.html#cb20-8" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;)</span>
+<span id="cb20-9"><a href="dynamic-interaction.html#cb20-9" tabindex="-1"></a>  } else {</span>
+<span id="cb20-10"><a href="dynamic-interaction.html#cb20-10" tabindex="-1"></a>    # Add in the input, make sure to evaluate the parsed text so that R</span>
+<span id="cb20-11"><a href="dynamic-interaction.html#cb20-11" tabindex="-1"></a>    # thinks of it as a variable and not just text</span>
+<span id="cb20-12"><a href="dynamic-interaction.html#cb20-12" tabindex="-1"></a>     ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, </span>
+<span id="cb20-13"><a href="dynamic-interaction.html#cb20-13" tabindex="-1"></a>                          color = eval(parse(text = input$fill_var)))) +</span>
+<span id="cb20-14"><a href="dynamic-interaction.html#cb20-14" tabindex="-1"></a>      geom_point() +</span>
+<span id="cb20-15"><a href="dynamic-interaction.html#cb20-15" tabindex="-1"></a>      theme_minimal() +</span>
+<span id="cb20-16"><a href="dynamic-interaction.html#cb20-16" tabindex="-1"></a>      labs(x = &quot;Length (mm)&quot;, y = &quot;Depth (mm)&quot;, color = &quot;&quot;)</span>
+<span id="cb20-17"><a href="dynamic-interaction.html#cb20-17" tabindex="-1"></a>  }</span>
+<span id="cb20-18"><a href="dynamic-interaction.html#cb20-18" tabindex="-1"></a>}) </span>
+<span id="cb20-19"><a href="dynamic-interaction.html#cb20-19" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="dynamic-interaction.html#cb20-20" tabindex="-1"></a>```</span></code></pre></div>
+<p>Note there are several different ways to play around with the <code>reactive()</code> function that could perhaps be used here, so I am demonstrating just one way to work with this.</p>
 
 </div>
 </div>
@@ -467,6 +529,7 @@ A file upload control wizard
 <hr />
 <ol start="2">
 <li id="fn2"><p>Mind the Note in Introduction: We are NOT learning full-blown Shiny.<a href="dynamic-interaction.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Note: Not all of these inputs are accessible/screen-reader friendly (e.g. slider’s are harder for screen-readers than discrete boxes).<a href="dynamic-interaction.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

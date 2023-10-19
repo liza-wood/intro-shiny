@@ -1,13 +1,13 @@
 # Static interaction 
 
-So far, our dashboard doesn't have any interactive content -- we only have shapes and some text. What we want to do next is add in a figure so that we can work words interactivity. Our first focus will be on plots that can be interacted with using wrapper functions like `plotly` and `networkD3`, but aren't actually dynamic -- meaning they don't respond to the user yet.
+So far, our dashboard doesn't have any content -- we only have boxes and some text. What we want to do next is add in a figure so that we can work towards interactivity. Our first focus will be on plots that can be interacted with using wrapper functions like `plotly` and `networkD3`, but aren't actually dynamic -- meaning they don't respond to the user yet.
 
 For instance, you might want to just show off some graphs and let folks have a peek at the underlying data, but not actually change the shape or variables represented in the data. Here are some examples: 
 
 * https://testing-apps.shinyapps.io/flexdashboard-dygraphs/
 * https://testing-apps.shinyapps.io/flexdashboard-highcharter/
 
-Note that there are loads of example, all of which share source code (!), available through `[flexdashboard` examples](https://rstudio.github.io/flexdashboard/articles/examples.html).  
+Note that there are loads of examples, all of which share source code (!), available through [`flexdashboard`](https://rstudio.github.io/flexdashboard/articles/examples.html).  
 
 To add in figures we can insert code chunks to our Rmd. As in other Rmd formatting, we can also insert a setup chunk where we load in our packages. Feel free to paste in all of this code to your Rmd document again, or paste only the new code chunk. 
 
@@ -32,18 +32,18 @@ library(plotly)
   
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(size = 2, color = "#51127C") +
+  geom_point(size = 3, color = "#51127C") +
   theme_minimal() +
   labs(x = "Length (mm)", y = "Depth (mm)") 
 ```
 ````
 
-So now we have a plot embedded in our dashboard. Cool! But we can't do anything with it yet -- it is totally static. The first entry point to making this interactive is to use wrapper functions. For instance, you may have played with the [`plotly` package](https://github.com/plotly/plotly.R) before. We can wrap the function `ggplotly` around our ggplot to convert the static ggplot to an intractive one, where we can explore the values behind each data point. 
+If we click **Knit** again, now we have a plot embedded in our dashboard. Cool! But we can't do anything with it yet -- it is totally static. The first entry point to making this interactive is to use wrapper functions. For instance, you may have played with the [`plotly` package](https://github.com/plotly/plotly.R) before. We can wrap the function `ggplotly` around our ggplot to convert the static ggplot to an intractive one, where we can explore the values behind each data point. 
 
 ````{verbatim}
 ```{r}
 ggplotly(ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(size = 2, color = "#51127C") +
+  geom_point(size = 3, color = "#51127C") +
   theme_minimal() +
   labs(x = "Length (mm)", y = "Depth (mm)"))
 ```
@@ -54,7 +54,7 @@ Further, `plotly` has lots of capacities, and just one example is that we can pl
 ````{verbatim}
 ```{r}
 ggplotly(ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(size = 2, color = "#51127C") +
+  geom_point(size = 3, color = "#51127C") +
   theme_minimal() +
   labs(x = "Length (mm)", y = "Depth (mm)"),
   tooltip = c("x"))
@@ -130,9 +130,6 @@ ggplotly(ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ### Penguins by island
 ```{r}
-ColourScale <- 'd3.scaleOrdinal()
-            .domain(["", "tigers"])
-           .range(["#FF6900", "#694489"]);'
 penguins %>% 
   cbind(select(penguins_raw, `Individual ID`)) %>% 
   filter(year == 2007) %>% 

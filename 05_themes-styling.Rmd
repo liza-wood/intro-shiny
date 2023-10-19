@@ -1,8 +1,48 @@
 # Themes and styling 
 
+Once you have your interactive features built in, some of the finishing stages are to add styles to make the page more personalized. We'll briefly review two ways to do this: built-in (pre-made) themes and custom themes. 
+
 ## Built-in themes 
 
-## Custom CSS
+You can choose from pre-set themes by selecting a theme in your YAML. These pre-set themes are defined by Bootswatch via `bslib`. You can look at the pre-set themes here for [Version 3](https://bootswatch.com/3/) and [Version 4](https://bootswatch.com/). 
 
-here is already a much more impressive penguins layout
-https://rstudio.github.io/flexdashboard/articles/theme.html
+Likewise, if you have `bslib` and `bsicons` installed, you can also run this line of code in your console to open up a demo page that has theme and formatting selectors that can be changed.
+
+```
+bslib::bs_theme_preview()
+```
+
+Once you choose a pre-set theme, add it to your YAML. For example, I am selecting the 'sketchy' theme from Bootswatch Version 4. 
+
+```{r, eval = F}
+---
+output:
+  flexdashboard::flex_dashboard:
+    theme: 
+      version: 4
+      bootswatch: sketchy
+---
+```
+
+Now if we run the page with this theme setting, we can see the look of our page change. 
+
+## Custom themes 
+
+You can also customize your themes by outlining each component of the format you want in the YAML. The trick is knowing what each abbreviation stands for. Here are some helpers: main background color (bg), foreground color (fg), accent colors (primary, secondary, etc), and fonts (base_font, heading_font, code_font, etc). You would add these to your YAML like this:
+
+```
+---
+output:
+  flexdashboard::flex_dashboard:
+    theme: 
+      bg: "#F0F0F0" # light gray background
+      fg: "#000000" # black for fonts that are foregrounded
+      primary: "#2C728E" # blue nav bar
+      secondary: "#472D7B" # can't see this anywhere
+      base_font:
+        google: "Poppins"
+---
+```
+Admittedly, I am still learning what each abbreviation stands for. I often look at others' sites and draw on their own custom edits, tweak them, and find what works. 
+
+Finally, I want to mention that there is a matter of styling with CSS, but that is beyond the scope of this lesson. If you check out the bottom of the [flexdashboard theme page](https://rstudio.github.io/flexdashboard/articles/theme.html), you'll see a custom CSS penguins page. 
